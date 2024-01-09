@@ -1,0 +1,333 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\QuanLyBanHang.bundle.scp.css",
+      "PackagePath": "staticwebassets\\QuanLyBanHang.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\DataTable\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\DataTable\\jquery.dataTables.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\DataTable\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\DataTable\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\FileCSVs\\Categories.csv",
+      "PackagePath": "staticwebassets\\FileCSVs\\Categories.csv"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\FileCSVs\\Products.csv",
+      "PackagePath": "staticwebassets\\FileCSVs\\Products.csv"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\css\\DataTableCss\\jquery.dataTables.min.css",
+      "PackagePath": "staticwebassets\\css\\DataTableCss\\jquery.dataTables.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\images\\iphone15.jpg",
+      "PackagePath": "staticwebassets\\images\\iphone15.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\js\\dataTable.js",
+      "PackagePath": "staticwebassets\\js\\dataTable.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\055553fa-8a81-481f-a279-85ea8f9f4a80.jpg",
+      "PackagePath": "staticwebassets\\user-content\\055553fa-8a81-481f-a279-85ea8f9f4a80.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\07e94217-0950-45eb-a2c9-7af75ea84d95.png",
+      "PackagePath": "staticwebassets\\user-content\\07e94217-0950-45eb-a2c9-7af75ea84d95.png"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\18841d52-1fba-4397-8e19-ad9182803c7d.jpg",
+      "PackagePath": "staticwebassets\\user-content\\18841d52-1fba-4397-8e19-ad9182803c7d.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\4de7e5b0-5ef7-4028-b55a-85f558c51407.jpg",
+      "PackagePath": "staticwebassets\\user-content\\4de7e5b0-5ef7-4028-b55a-85f558c51407.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\6d128896-e09f-477b-aa01-5be2bd37b05a.jpg",
+      "PackagePath": "staticwebassets\\user-content\\6d128896-e09f-477b-aa01-5be2bd37b05a.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\757825da-92e6-4926-a19e-84014b32a6fa.jpg",
+      "PackagePath": "staticwebassets\\user-content\\757825da-92e6-4926-a19e-84014b32a6fa.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\7d949951-3262-4614-ab12-59fa45fc86d9.jpg",
+      "PackagePath": "staticwebassets\\user-content\\7d949951-3262-4614-ab12-59fa45fc86d9.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\87cedd8a-c338-4b3b-ba61-d260c516f59d.jpg",
+      "PackagePath": "staticwebassets\\user-content\\87cedd8a-c338-4b3b-ba61-d260c516f59d.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\df8c4cd7-d58d-4f5e-8693-003b11bcc659.jpg",
+      "PackagePath": "staticwebassets\\user-content\\df8c4cd7-d58d-4f5e-8693-003b11bcc659.jpg"
+    },
+    {
+      "Id": "E:\\DEHA\\.NET_DEHA\\QuanLyBanHang\\wwwroot\\user-content\\e5f4b5a2-ffff-4215-9e66-1974eb6d7952.jpg",
+      "PackagePath": "staticwebassets\\user-content\\e5f4b5a2-ffff-4215-9e66-1974eb6d7952.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.QuanLyBanHang.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.QuanLyBanHang.props",
+      "PackagePath": "build\\QuanLyBanHang.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.QuanLyBanHang.props",
+      "PackagePath": "buildMultiTargeting\\QuanLyBanHang.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.QuanLyBanHang.props",
+      "PackagePath": "buildTransitive\\QuanLyBanHang.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

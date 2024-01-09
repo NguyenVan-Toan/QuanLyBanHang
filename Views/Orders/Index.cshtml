@@ -1,0 +1,111 @@
+@* @model IEnumerable<QuanLyBanHang.Data.Entities.Product> *@
+@model IEnumerable<QuanLyBanHang.ViewModels.OrderViewModel>
+
+@{
+    ViewData["Title"] = "Order management";
+}
+
+<h1>@ViewBag.Title</h1>
+<table class="table" id="">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transportation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totals)
+            </th>
+            <th style="min-width: 130px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Transportation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <span class="status">@Html.DisplayFor(modelItem => item.Status)</span>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Totals) VND
+                </td>
+                <td>
+                    @if (item.Status == "Da duyet" || item.Status == "Đã duyệt")
+                    {
+                        <a class="btn btn-success disabled" style="">Đã duyệt</a>
+                        <a asp-action="GetDetails" asp-controller="OrderDetails" asp-route-id="@item.Id"
+                            class="btn btn-primary">Xem
+                            chi tiết</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-danger duyetDon" data-id="@item.Id">Duyệt</a>
+                        <a asp-controller="OrderDetails" asp-action="GetDetails" asp-route-id="@item.Id"
+                            class="btn btn-primary">Xem
+                            chi tiết</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/dataTable.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".duyetDon").click(function () {
+                var id = $(this).data("id");
+                var thisElement = $(this);
+                var parent = $(this).parent().parent();
+                var status = parent.find("td > span.status");
+                $.ajax({
+                    url: "/Orders/DuyetDon",
+                    type: "post",
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            alert("thanh cong")
+                            status.text("Đã duyệt");
+                            thisElement.removeClass("btn-danger");
+                            thisElement.addClass("btn-success disabled");
+                            thisElement.text("Đã duyệt");
+
+                        }
+                    }
+                });
+            });
+
+        })
+    </script>
+}

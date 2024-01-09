@@ -1,0 +1,132 @@
+@* @model IEnumerable<QuanLyBanHang.Data.Entities.Product> *@
+@model IEnumerable<QuanLyBanHang.ViewModels.CartViewModel>
+@using Microsoft.AspNetCore.Identity
+@using QuanLyBanHang.Data.Entities
+
+@inject SignInManager<Account> SignInManager
+@inject UserManager<Account> UserManager
+@{
+    ViewData["Title"] = "Cart";
+    var name = UserManager.GetUserName(User) ?? "";
+    string userId = UserManager.GetUserId(User) ?? "";
+}
+
+<h1>
+    @ViewBag.Title
+    <span class="text-danger">@name</span>
+</h1>
+@if (SignInManager.IsSignedIn(User))
+{
+    if (Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Number)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Totals)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            <span class="price">@Html.DisplayFor(modelItem => item.Price)</span>
+                            <span> VND</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary me-3 giam" data-id="@item.Id"> - </button>
+                            <span class="number">@Html.DisplayFor(modelItem => item.Number)</span>
+                            <button class="btn btn-secondary ms-3 tang" data-id="@item.Id"> + </button>
+                        </td>
+                        <td>
+                            <span class="totals">@Html.DisplayFor(modelItem => item.Totals)</span><span> VND</span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-action="ThanhToan" asp-controller="Carts" asp-route-id="@userId" class="btn btn-danger">Đặt hàng</a>
+    }
+    else
+    {
+        <div class="container text-center">
+            <h1 class="text-center ">Giỏ hàng trống</h1>
+            <a class="btn btn-primary m-auto" asp-action="ShowProduct" asp-controller="Products">Tiếp
+                tục mua hàng</a>
+        </div>
+    }
+
+}
+else
+{
+    <div class="container text-center">
+        <h1 class="text-center mx-auto text-danger">Chưa đăng nhập. Vui lòng đăng nhập để tiếp tục</h1>
+        <a class="btn btn-primary m-auto" asp-action="Login" asp-controller="Account">Đăng nhập</a>
+    </div>
+}
+
+@section Scripts {
+    <script src="~/js/dataTable.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".tang").click(function () {
+                var Val = $(this).prev(".number");
+                var cartId = $(this).data("id");
+                var parent = $(this).parent().parent();
+                var priceText = parent.find("td>span.price").text();
+                var price = parseInt(priceText, 10);
+                var Totals = parent.find("td>span.totals");
+                $.ajax({
+                    url: "/Carts/SuaSoLuong",
+                    type: 'post',
+                    data: { id: cartId, num: 1 },
+                    success: function (rs) {
+                        if (rs.success) {
+                            Val.text(rs.newNumber);
+                            Totals.text(price * rs.newNumber);
+                        }
+                    }
+                });
+            });
+            $(".giam").click(function () {
+                var Val = $(this).next(".number");
+                var cartId = $(this).data("id");
+                var parent = $(this).parent().parent();
+                var priceText = parent.find("td>span.price").text();
+                var price = parseInt(priceText, 10);
+                var Totals = parent.find("td>span.totals");
+                $.ajax({
+                    url: "/Carts/SuaSoLuong",
+                    type: 'post',
+                    data: { id: cartId, num: -1 },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.newNumber > 0) {
+                                Val.text(rs.newNumber);
+                                Totals.text(price * rs.newNumber);
+                            }
+                            else {
+                                parent.remove();
+                                location.reload();
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

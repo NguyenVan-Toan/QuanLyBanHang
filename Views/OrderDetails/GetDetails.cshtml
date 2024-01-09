@@ -1,0 +1,98 @@
+@* @model IEnumerable<QuanLyBanHang.Data.Entities.Product> *@
+@model IEnumerable<QuanLyBanHang.ViewModels.OrderDetailViewModels>
+
+@{
+    ViewData["Title"] = "List order details";
+    var sum = 0;
+}
+
+<h1>@ViewBag.Title</h1>
+<table class="table" id="">
+    <thead>
+        <tr>
+            <th colspan="">@Html.DisplayNameFor(model => model.OrderId)</th>
+            <th colspan="4">@Model.FirstOrDefault()!.OrderId</th>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDetailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                Totals
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDetailId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price) VND
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @{
+                        var total = item.Quantity * item.Price;
+                        sum += total;
+                    }
+                    @total VND
+                </td>
+            </tr>
+        }
+        <tr>
+            <th colspan="4" class="text-center">Total payment</th>
+            <td>@sum VND</td>
+        </tr>
+
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index" asp-controller="Orders">Back to List</a>
+</div>
+@section Scripts {
+    <script src="~/js/dataTable.js"></script>
+    @* <script>
+$(document).ready(function () {
+
+$(".duyetDon").click(function () {
+var id = $(this).data("id");
+var thisElement = $(this);
+var parent = $(this).parent().parent();
+var status = parent.find("td > span.status");
+$.ajax({
+url: "/Orders/DuyetDon",
+type: "post",
+data: { id: id },
+success: function (rs) {
+if (rs.success) {
+alert("thanh cong")
+status.text("Đã duyệt");
+thisElement.removeClass("btn-danger");
+thisElement.addClass("btn-success disabled");
+thisElement.text("Đã duyệt");
+
+}
+}
+});
+});
+
+})
+</script> *@
+}

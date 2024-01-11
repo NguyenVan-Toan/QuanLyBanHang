@@ -5,7 +5,6 @@ using QuanLyBanHang.Data.Entities;
 namespace QuanLyBanHang.Data;
 public class QuanLyBanHangDbContext : IdentityDbContext<Account>
 {
-
     public QuanLyBanHangDbContext(DbContextOptions<QuanLyBanHangDbContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

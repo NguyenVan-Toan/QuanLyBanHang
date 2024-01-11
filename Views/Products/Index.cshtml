@@ -8,7 +8,7 @@
 <h1>@ViewBag.Title</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
 <table class="table" id="dataTable">
     <thead>
@@ -36,16 +36,19 @@
                     @Html.DisplayFor(modelItem => item.ProductName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+                    @{
+                        var price = item.Price.ToString("N0");
+                    }
+                    <span class="">@price VND</span>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Description)
+                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
@@ -53,7 +56,19 @@
         }
     </tbody>
 </table>
-
 @section Scripts {
     <script src="~/js/dataTable.js"></script>
 }
+<style>
+    .line-break {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* Số dòng hiển thị */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* Hiển thị dấu chấm ba chấm (...) khi văn bản bị cắt ngắn */
+        line-height: 1.2;
+        /* Độ cao dòng */
+    }
+</style>

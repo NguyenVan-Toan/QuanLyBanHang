@@ -532,3 +532,4 @@ E:\DEHA\.NET_DEHA\QuanLyBanHang\obj\Debug\net8.0\refint\QuanLyBanHang.dll
 E:\DEHA\.NET_DEHA\QuanLyBanHang\obj\Debug\net8.0\QuanLyBanHang.pdb
 E:\DEHA\.NET_DEHA\QuanLyBanHang\obj\Debug\net8.0\QuanLyBanHang.genruntimeconfig.cache
 E:\DEHA\.NET_DEHA\QuanLyBanHang\obj\Debug\net8.0\ref\QuanLyBanHang.dll
+E:\DEHA\.NET_DEHA\QuanLyBanHang\obj\Debug\net8.0\QuanLyBanHang.sourcelink.json

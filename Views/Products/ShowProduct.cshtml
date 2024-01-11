@@ -16,10 +16,18 @@
                     <div class="col col-4 mb-5">
                         <div class="card" style="width: 22rem; height 10rem;">
                             <img id="preview" class="card-img-top" src="@product.ImagePath" alt="Preview" />
-                            @* <img src="~/images/iphone15.jpg" class="card-img-top" alt="..."> *@
                             <div class="card-body">
                                 <h5 class="card-title text-nowrap overflow-hidden">@product.ProductName</h5>
-                                <p class="card-text text-danger">@product.Price VND</p>
+                                <p class="card-text text-danger">
+                                    @{
+                                        var price = product.Price.ToString("N0");
+                                        var prePrice = product.Price * 0.97;
+                                        var prePriceText = prePrice.ToString("N0");
+                                    }
+                                    <span class="text-danger fw-bold">@prePriceText VND</span>
+                                    <span class="ms-2 bg-danger text-white fw-bold p-1 ">-3%</span>
+                                    <span class="ms-2 fs-6 text-decoration-line-through text-secondary">@price VND</span>
+                                </p>
                                 <div class="container d-flex justify-content-around p-0">
                                     <a href="~/xem-san-pham/@SlugGenerator.SlugGenerator.GenerateSlug(product.ProductName)-@product.Id"
                                         class="btn btn-primary">Xem chi tiết</a>

@@ -56,7 +56,9 @@
                     <span class="status">@Html.DisplayFor(modelItem => item.Status)</span>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Totals) VND
+                    @{
+                        var totals = item.Totals.ToString("N0");
+                    }@totals VND
                 </td>
                 <td>
                     @if (item.Status == "Da duyet" || item.Status == "Đã duyệt")

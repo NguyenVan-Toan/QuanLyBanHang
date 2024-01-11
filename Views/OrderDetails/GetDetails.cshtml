@@ -39,7 +39,10 @@
                     @Html.DisplayFor(modelItem => item.OrderDetailId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price) VND
+                    @{
+                        var price = item.Price.ToString("N0");
+                    }
+                    @price VND
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Quantity)
@@ -49,22 +52,26 @@
                 </td>
                 <td>
                     @{
-                        var total = item.Quantity * item.Price;
+                        var total = (item.Quantity * item.Price);
                         sum += total;
+                        var totalPrice = total.ToString("N0");
                     }
-                    @total VND
+                    @totalPrice VND
                 </td>
             </tr>
         }
         <tr>
             <th colspan="4" class="text-center">Total payment</th>
-            <td>@sum VND</td>
+            @{
+                var totals = sum.ToString("N0");
+            }
+            <td>@totals VND</td>
         </tr>
 
     </tbody>
 </table>
 <div>
-    <a asp-action="Index" asp-controller="Orders">Back to List</a>
+    <a class="btn btn-secondary" asp-action="Index" asp-controller="Orders">Back to List</a>
 </div>
 @section Scripts {
     <script src="~/js/dataTable.js"></script>

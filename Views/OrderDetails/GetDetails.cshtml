@@ -1,4 +1,3 @@
-@* @model IEnumerable<QuanLyBanHang.Data.Entities.Product> *@
 @model IEnumerable<QuanLyBanHang.ViewModels.OrderDetailViewModels>
 
 @{
@@ -7,69 +6,76 @@
 }
 
 <h1>@ViewBag.Title</h1>
-<table class="table" id="">
-    <thead>
-        <tr>
-            <th colspan="">@Html.DisplayNameFor(model => model.OrderId)</th>
-            <th colspan="4">@Model.FirstOrDefault()!.OrderId</th>
-        </tr>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderDetailId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                Totals
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+@if (Model.Any())
+{
+    <table class="table" id="">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrderDetailId)
-                </td>
-                <td>
-                    @{
-                        var price = item.Price.ToString("N0");
-                    }
-                    @price VND
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Quantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @{
-                        var total = (item.Quantity * item.Price);
-                        sum += total;
-                        var totalPrice = total.ToString("N0");
-                    }
-                    @totalPrice VND
-                </td>
+                <th>@Html.DisplayNameFor(model => model.OrderId)</th>
+                <th colspan="4">@Model.FirstOrDefault()!.OrderId</th>
             </tr>
-        }
-        <tr>
-            <th colspan="4" class="text-center">Total payment</th>
-            @{
-                var totals = sum.ToString("N0");
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDetailId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    Totals
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDetailId)
+                    </td>
+                    <td>
+                        @{
+                            var price = item.Price.ToString("N0");
+                        }
+                        @price VND
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @{
+                            var total = (item.Quantity * item.Price);
+                            sum += total;
+                            var totalPrice = total.ToString("N0");
+                        }
+                        @totalPrice VND
+                    </td>
+                </tr>
             }
-            <td>@totals VND</td>
-        </tr>
+            <tr>
+                <th colspan="4" class="text-center">Total payment</th>
+                @{
+                    var totals = sum.ToString("N0");
+                }
+                <td>@totals VND</td>
+            </tr>
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-danger">Không tìm được thông tin chi tiết của đơn hàng</div>
+}
 <div>
     <a class="btn btn-secondary" asp-action="Index" asp-controller="Orders">Back to List</a>
 </div>

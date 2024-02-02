@@ -1,0 +1,53 @@
+﻿@model IEnumerable<QuanLyBanHang.ViewModels.OrderRequest>
+
+<table class="table" id="">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transportation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totals)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Transportation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <span class="status">@Html.DisplayFor(modelItem => item.Status)</span>
+                </td>
+                <td>
+                    @{ var totals = item.Totals.ToString("N0"); }
+                    @totals VND
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

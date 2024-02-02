@@ -34,6 +34,12 @@ namespace QuanLyBanHang.ViewModels
         [Required(ErrorMessage = "Phải nhập {0}")]
         [StringLength(100, ErrorMessage = "{0} phải dài từ {2} đến {1} ký tự.", MinimumLength = 3)]
         public string? UserName { get; set; }
-
+        [DataType(DataType.Text)]
+        [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "Phải nhập địa chỉ")]
+        public string? Address { get; set; }
+        [Display(Name = "Họ tên")]
+        [Required(ErrorMessage = "Phải nhập họ tên")]
+        public string? FullName {  get; set; }
     }
 }

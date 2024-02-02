@@ -110,7 +110,7 @@ public class AccountController : Controller
             // Add role to the account
             await _userManager.AddToRoleAsync(user, "Member");
             // Add new customer
-            var customer = new Customer { FullName = "", Email = model.Email, Address = "", AccountId = user.Id };
+            var customer = new Customer { FullName = model.FullName, Email = model.Email, Address = model.Address, AccountId = user.Id };
             _context.Customers.Add(customer);
             _context.SaveChanges();
             if (result.Succeeded)

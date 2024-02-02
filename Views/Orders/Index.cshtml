@@ -1,4 +1,3 @@
-@* @model IEnumerable<QuanLyBanHang.Data.Entities.Product> *@
 @model IEnumerable<QuanLyBanHang.ViewModels.OrderViewModel>
 
 @{
@@ -6,6 +5,8 @@
 }
 
 <h1>@ViewBag.Title</h1>
+
+<hr />
 <table class="table" id="">
     <thead>
         <tr>
@@ -26,6 +27,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BranchName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Totals)
@@ -54,6 +58,9 @@
                 </td>
                 <td>
                     <span class="status">@Html.DisplayFor(modelItem => item.Status)</span>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BranchName)
                 </td>
                 <td>
                     @{
@@ -107,7 +114,6 @@
                     }
                 });
             });
-
         })
     </script>
 }

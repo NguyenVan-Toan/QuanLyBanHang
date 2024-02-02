@@ -7,4 +7,5 @@ public class CartViewModel
     public int Price { get; set; }
     public int Number { get; set; }
     public int Totals { get; set; }
+    public string? Branch { get; set; }
 }

@@ -23,21 +23,28 @@ namespace QuanLyBanHang.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
-        // private readonly IOrderDetailService _orderDetailService;
         private readonly IValidator<ProductRequest> _validator;
         private readonly ICartService _cartService;
         private readonly IValidator<ProductViewModel> _validatorVM;
         private readonly UserManager<Account> _userManager;
-        // IOrderDetailService orderDetailService,
-        public ProductsController(ICartService cartService, UserManager<Account> userManager, ICategoryService categoryService, IProductService productService, IValidator<ProductRequest> validator, IValidator<ProductViewModel> validatorVM)
+        private readonly IBranchService _branchService;
+        public ProductsController(
+            ICartService cartService, 
+            UserManager<Account> userManager,
+            ICategoryService categoryService,
+            IProductService productService,
+            IValidator<ProductRequest> validator,
+            IValidator<ProductViewModel> validatorVM,
+            IBranchService branchService
+            )
         {
             _cartService = cartService;
-            // _orderDetailService = orderDetailService;
             _productService = productService;
             _categoryService = categoryService;
             _validator = validator;
             _validatorVM = validatorVM;
             _userManager = userManager;
+            _branchService = branchService;
         }
         // GET: Products
         public async Task<IActionResult> Index()
@@ -69,6 +76,7 @@ namespace QuanLyBanHang.Controllers
         public async Task<IActionResult> Create()
         {
             ViewData["CategoryId"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "CategoryName");
+            ViewData["BranchName"] = new SelectList(await _branchService.GetAllAsync(), "Id", "BranchName");
             return View();
         }
 
@@ -90,7 +98,8 @@ namespace QuanLyBanHang.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "CategoryName", productRequest.CategoryId);
-            return View(productRequest);
+            ViewData["BranchName"] = new SelectList(await _branchService.GetAllAsync(), "Id", "BranchName", productRequest.BranchId);
+            return View(productRequest);    
         }
 
         // GET: Products/Edit/5
@@ -101,6 +110,7 @@ namespace QuanLyBanHang.Controllers
             {
                 return NotFound();
             }
+            ViewData["BranchName"] = new SelectList(await _branchService.GetAllAsync(), "Id", "BranchName");
             ViewData["CategoryId"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "CategoryName", product.CategoryId);
             return View(product);
         }
@@ -122,6 +132,7 @@ namespace QuanLyBanHang.Controllers
                 await _productService.Update(productViewModel);
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["BranchName"] = new SelectList(await _branchService.GetAllAsync(), "Id", "BranchName", productViewModel.BranchId);
             ViewData["CategoryId"] = new SelectList(await _categoryService.GetAllAsync(), "Id", "CategoryName", productViewModel.CategoryId);
             return View(productViewModel);
         }

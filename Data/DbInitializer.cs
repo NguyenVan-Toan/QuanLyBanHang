@@ -70,20 +70,7 @@ public class DbInitializer
                 {
                     var mapper = serviceProvider.GetRequiredService<IMapper>();
                     var categories = csv.GetRecords<CategoryViewModel>().ToList();
-
-                    // context.Database.OpenConnection(); // Mở kết nối đến cơ sở dữ liệu
-                    // Thực hiện set id của category là on
-                    // var commandText = "SET IDENTITY_INSERT Categories ON";
-                    // var command = context.Database.GetDbConnection().CreateCommand();
-                    // command.CommandText = commandText;
-                    // command.ExecuteNonQuery();
-                    // Tiếp theo, thêm các đối tượng Categories vào cơ sở dữ liệu trên SQL Server
                     context.Categories.AddRange(mapper.Map<IEnumerable<Category>>(categories));
-                    // Cuối cùng, đặt lại thuộc tính IDENTITY_INSERT thành OFF
-                    // commandText = "SET IDENTITY_INSERT Categories OFF";
-                    // command = context.Database.GetDbConnection().CreateCommand();
-                    // command.CommandText = commandText;
-                    // command.ExecuteNonQuery();
                     context.Database.OpenConnection();
                     try
                     {
@@ -95,8 +82,28 @@ public class DbInitializer
                     {
                         context.Database.CloseConnection();
                     }
-                    // context.SaveChanges();
-                    // context.Database.CloseConnection(); // Đóng kết nối đến cơ sở dữ liệu
+                }
+            }
+            else if (!context.Branch.Any())
+            {
+                string pathBranch = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\\FileCSVs\\Branch.csv"}";
+                using (var reader = new StreamReader(pathBranch))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    var branches = csv.GetRecords<Branch>().ToList();
+                    // Tiếp theo, thêm các đối tượng Product vào cơ sở dữ liệu trên SQL Server
+                    context.Branch.AddRange(branches);
+                    context.Database.OpenConnection();
+                    try
+                    {
+                        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Branch ON;");
+                        context.SaveChanges();
+                        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Branch OFF;");
+                    }
+                    finally
+                    {
+                        context.Database.CloseConnection();
+                    }
                 }
             }
             else if (!context.Products.Any())

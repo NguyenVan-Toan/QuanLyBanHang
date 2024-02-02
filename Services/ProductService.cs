@@ -22,7 +22,11 @@ public class ProductService : IProductService
     private readonly QuanLyBanHangDbContext _context;
     private readonly IStorageService _storageService;
     private const string USER_CONTENT_FOLDER_NAME = "user-content";
-    public ProductService(IMapper mapper, QuanLyBanHangDbContext context, IStorageService storageService)
+    public ProductService(
+        IMapper mapper, 
+        QuanLyBanHangDbContext context, 
+        IStorageService storageService
+        )
     {
         _mapper = mapper;
         _context = context;

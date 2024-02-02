@@ -54,6 +54,7 @@ builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IOrderDetailService, OrderDetailService>();
+builder.Services.AddTransient<IBranchService, BranchService>();
 //File Storage
 builder.Services.AddTransient<IStorageService, FileStorageService>();
 //DbInitializer

@@ -15,6 +15,7 @@ public class Order
     public string? Status { get; set; }
     public int Totals { get; set; }
     public int CustomerId { get; set; }
+    public int BranchId { get; set; }
     public Customer? Customer { get; set; }
     public ICollection<OrderDetail>? OrderDetail { get; set; }
 }
@@ -23,16 +24,9 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
-        // builder.HasOne(o => o.OrderDetail)
-        //     .WithOne(od => od.Order)
-        //     .HasForeignKey<Order>(o => o.OrderDetailId);
         builder.HasMany(o => o.OrderDetail)
         .WithOne(od => od.Order)
         .HasForeignKey(od => od.OrderId)
         .HasPrincipalKey(o => o.Id);
-
-        // builder.HasOne(o => o.Customer)
-        //     .WithOne()
-        //     .HasForeignKey<Order>(o => o.CustomerId);
     }
 }

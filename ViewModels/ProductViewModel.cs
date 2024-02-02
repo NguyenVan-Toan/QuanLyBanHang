@@ -5,7 +5,6 @@ namespace QuanLyBanHang.ViewModels;
 public class ProductViewModel
 {
     public int Id { get; set; }
-
     public string? ProductName { get; set; }
     public string? ImagePath { get; set; }
     public IFormFile? Image { get; set; }
@@ -13,6 +12,7 @@ public class ProductViewModel
     public int Quantity { get; set; }
     public string? Description { get; set; }
     public int CategoryId { get; set; }
+    public int BranchId { get; set; }
     public Category? Category { get; set; }
 }
 public class ProductRequest
@@ -23,6 +23,7 @@ public class ProductRequest
     public int Quantity { get; set; }
     public string? Description { get; set; }
     public int CategoryId { get; set; }
+    public int BranchId { get; set; }
     public Category? Category { get; set; }
 }
 public class ProductSeedData
@@ -32,4 +33,5 @@ public class ProductSeedData
     public int Quantity { get; set; }
     public string? Description { get; set; }
     public int CategoryId { get; set; }
+    public int BranchId { get; set; }
 }

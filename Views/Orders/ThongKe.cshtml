@@ -1,0 +1,192 @@
+﻿@model IEnumerable<QuanLyBanHang.ViewModels.OrderFilter>
+
+<div class="form-check form-check-inline" role="button">
+    <input role="button" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+    <label role="button" class="form-check-label" for="flexRadioDefault1">Export</label>
+</div>
+<div class="form-check form-check-inline" role="button">
+    <input role="button" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+    <label role="button" class="form-check-label" for="flexRadioDefault2">Import</label>
+</div>
+@* Area Export *@
+<div id="areaExport">
+    <div class="row">
+        <div class="col-2 me-2">
+            <input type="text" name="searchProductName" placeholder="Tên sản phẩm..." />
+        </div>
+        <div class="col-2 me-2">
+            <select style="font-size: 16px; height: 30px; width: 190px;" asp-items="@ViewBag.BranchName" name="searchBranchName">
+                <option value="">-- Chọn chi nhánh --</option>
+            </select>
+        </div>
+        <div class="col-2 me-2">
+            <input type="date" style="width: 190px; height: 30px;" name="searchDateCreated" />
+        </div>
+        <div class="col-2 me-2">
+            <input type="text" name="searchCustomerName" placeholder="Tên khách hàng..." />
+        </div>
+        <div class="col-2 me-2">
+            <select style="font-size: 16px; height: 30px; width: 190px;" asp-items="@ViewBag.CategoryName" name="searchCategory">
+                <option value="">-- Loại sản phẩm --</option>
+            </select>
+        </div>
+        <div class="col-1">
+            <button id="searchBtn" class="btn btn-sm btn-primary" style="width: 100%;">Tìm</button>
+        </div>
+    </div>
+    <div id="result">
+        <partial name="Export" model="Model" />
+    </div>
+    <button id="exportBtn" class="btn btn-primary">Export</button>
+</div>
+@* Area Import *@
+<div id="areaImport" class="row d-none">
+    <div class="col-4">
+        <input class="" id="fileName" disabled placeholder="Không có file nào..." />
+        <input type="file" id="fileInput" style="display: none;">
+        <button value="" id="chooseFileButton" class="">Import file</button>
+    </div>
+    <div class="col-2">
+        <button value="" id="addOrder" disabled="disabled" class="btn btn-primary">Đăng ký</button>
+    </div>
+    <div id="resultImport"></div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#searchBtn").click(function () {
+                var thisBtn = $(this)
+                var parent = thisBtn.parent().parent();
+                // Lay gia tri
+                var tenSP = parent.children('div').find('input[name="searchProductName"]').val();
+                var chiNhanh = parent.children('div').find('select[name="searchBranchName"]').val();
+                var ngaytao = parent.children('div').find('input[name="searchDateCreated"]').val();
+                var tenKhachHang = parent.children('div').find('input[name="searchCustomerName"]').val();
+                var loaiSP = parent.children('div').find('select[name="searchCategory"]').val();
+                // Gui search
+                console.log(ngaytao)
+                $.ajax({
+                    url: "/orders/ListOrder",
+                    type: 'post',
+                    data: {
+                        searchProductName: tenSP,
+                        searchBranchName: chiNhanh,
+                        searchDateCreated: ngaytao,
+                        searchCustomerName: tenKhachHang,
+                        searchCategory: loaiSP
+                    },
+                    success: function (result) {
+                        $("#result").html(result);
+                    }
+                });
+            })
+        });
+        var fileInput = document.getElementById("fileInput");
+        var chooseFileButton = document.getElementById("chooseFileButton");
+        var fileName = document.getElementById("fileName");
+        chooseFileButton.addEventListener("click", function () {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", function () {
+            if (fileInput.files[0]) {
+                var name = fileInput.files[0].name;
+                if (name.includes(".csv")) {
+                    fileName.value = name;
+                    var inFile = fileInput.files[0];
+
+                    var reader = new FileReader();
+                    // Định nghĩa hàm xử lý sự kiện khi FileReader hoàn thành việc đọc file
+                    reader.onload = function (event) {
+                        var csvContent = event.target.result;
+                        // Xử lý nội dung file CSV tại đây
+                        $.ajax({
+                            url: "/orders/ReadFileCsv",
+                            type: 'post',
+                            data: { fileContent: csvContent },
+                            success: function (result) {
+                                if (result.err) {
+                                    $("#addOrder").attr("disabled", "disabled");
+                                    $("#resultImport").html("")
+                                    alert(result.message);
+                                }
+                                else{
+                                    $("#resultImport").html(result);
+                                    $("#addOrder").removeAttr("disabled");
+                                }
+                            }
+                        });
+                    };
+                    // Đọc file CSV
+                    reader.readAsText(inFile)
+                }
+                else {
+                    fileName.value = "Chỉ nhận file CSV";
+                    $("#addOrder").attr("disabled", "disabled");
+                    $("#resultImport").html("")
+                }
+            }
+        });
+
+        // Export click => thay đổi giao diện
+        $(document).ready(function () {
+            $("#flexRadioDefault1").click(function () {
+                $("#areaExport").removeClass("d-none");
+                $("#areaImport").addClass("d-none");
+            })
+        })
+        // Import click => thay đổi giao diện
+        $(document).ready(function(){
+            $("#flexRadioDefault2").click(function () {
+                $("#areaImport").removeClass("d-none");
+                $("#areaExport").addClass("d-none");
+            })
+        })
+        var addOrder = document.getElementById("addOrder");
+        addOrder.addEventListener("click", function () {
+            if (fileInput.files[0]) {
+                var name = fileInput.files[0].name;
+                if (name.includes(".csv")) {
+                    console.log(name);
+                    fileName.value = name;
+                    var inFile = fileInput.files[0];
+
+                    var reader = new FileReader();
+                    // Đọc file CSV
+                    reader.readAsText(inFile)
+                    // Định nghĩa hàm xử lý sự kiện khi FileReader hoàn thành việc đọc file
+                    reader.onload = function (event) {
+                        var csvContent = event.target.result;
+                        $.ajax({
+                            url: "/orders/AddOrder",
+                            type: 'post',
+                            data: { fileContent: csvContent },
+                            success: function (result) {
+                                if(result.success)
+                                    alert("Thêm thành công");
+                                else{
+                                    alert("Thêm thất bại: " + result.err);
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        })
+        $(document).ready(function () {
+            $("#exportBtn").click(function () {
+                var jsonData = $("#listDataOrder").text();
+                console.log(jsonData)
+                $.ajax({
+                    url: "/orders/WriteFileCsv",
+                    type: "get",
+                    data: { jsonData: jsonData },
+                    success: function(result){
+                        alert(result.message);
+                    }
+                });
+            })
+        })
+    </script>
+}

@@ -59,7 +59,14 @@
                 }
             </tbody>
         </table>
-        <a asp-action="ThanhToan" asp-controller="Carts" asp-route-id="@userId" class="btn btn-danger">Đặt hàng</a>
+        <div class="">
+            <label class="control-label">Lựa chọn khu vực</label>
+            <select id="areaSelect">
+                <option value="1">Hà Nội</option>
+                <option value="2">Hồ Chí Minh</option>
+            </select>
+        </div>
+        <a asp-action="ThanhToan" asp-controller="Carts" asp-route-id="@userId" asp-route-ship="" id="thanhToan"  class="btn btn-danger">Đặt hàng</a>
     }
     else
     {
@@ -126,6 +133,19 @@ else
                         }
                     }
                 });
+            });
+            $("#thanhToan").click(function (e) {
+                e.preventDefault();
+                var selectedArea = $("#areaSelect").val();
+                var url = $(this).attr("href");
+                if (selectedArea) {
+                    var newUrl = url.concat("?ship=" + selectedArea);
+                    $(this).attr("href", newUrl);
+                    var urlnew = $(this).attr("href");
+                    window.location.href = newUrl; 
+                } else {
+                    
+                }
             });
         });
     </script>

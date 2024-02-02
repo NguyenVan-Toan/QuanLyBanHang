@@ -5,6 +5,7 @@ namespace QuanLyBanHang.ViewModels;
 public class LoginViewModel
 {
     [Required]
+    [Display(Name = "User name or email")]
     public string? UserNameOrEmail { get; set; }
     [Required]
     [DataType(DataType.Password)]

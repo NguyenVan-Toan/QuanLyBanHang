@@ -53,16 +53,22 @@ public class CartsController : Controller
     {
         return View();
     }
-    public async Task<IActionResult> ThanhToan(string id)
+    public async Task<IActionResult> ThanhToan(string id, string ship)
     {
+        int branchId = 1;
+        if (ship == "2")
+            branchId = 2;
         var carts = await _cartService.GetCartsByCustomer(id);
         var customer = _context.Customers.FirstOrDefault(c => c.AccountId == id);
-        // if (customer != null)
-        // {
-        //     if (string.IsNullOrEmpty(customer.Address) || string.IsNullOrEmpty(customer.FullName))
-        //         return View("XuLyThongTinUser");
-        // }
-        Order order = new Order { CreateDate = DateTime.Now, Payments = "Thanh toan truc tiep", Transportation = "Van chuyen nhanh", Address = "Ha Noi", Status = "Cho duyet", Totals = 0, Customer = customer };
+        Order order = new Order { 
+            CreateDate = DateTime.Now, 
+            Payments = "Thanh toan truc tiep", 
+            Transportation = "Van chuyen nhanh", 
+            Address = customer!.Address, 
+            BranchId = branchId, 
+            Status = "Chờ duyệt", 
+            Totals = 0, 
+            Customer = customer };
         var entryOrder = _context.Orders.Add(order);
         _context.SaveChanges();
         var orderId = entryOrder.Entity.Id;
@@ -90,9 +96,6 @@ public class CartsController : Controller
             + "<p>Tổng số tiền cần thanh toán: " + totals + "VND."
             );
         await _cartService.DeleteCartsByCustomer(customerId);
-
-        // product!.Quantity = product.Quantity - 1;
-        // _context.SaveChanges();
         return View("ThanhToanThanhCong");
     }
     public IActionResult ThanhToanThanhCong()

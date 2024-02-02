@@ -30,4 +30,5 @@ public class QuanLyBanHangDbContext : IdentityDbContext<Account>
     public DbSet<Order> Orders { get; set; } = null!;
     public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
     public DbSet<Cart> Carts { get; set; } = null!;
+    public DbSet<Branch> Branch { get; set; }
 }

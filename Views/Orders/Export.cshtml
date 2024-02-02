@@ -1,0 +1,69 @@
+﻿@model IEnumerable<QuanLyBanHang.ViewModels.OrderFilter>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th style="min-width: 150px">
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th style="max-width: 350px">
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BranchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th style="min-width: 110px">
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totals)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BranchName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    <span class="status">@Html.DisplayFor(modelItem => item.Status)</span>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @{
+                        var totals = item.Totals.ToString("N0");
+                    }@totals VND
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div id="listDataOrder" class="d-none">
+    @if (ViewBag.ListOrder != null)
+        @ViewBag.ListOrder
+</div>
